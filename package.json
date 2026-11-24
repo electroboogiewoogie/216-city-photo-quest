@@ -1,0 +1,34 @@
+{
+  "name": "city-photo-quest",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5216 --strictPort",
+    "build": "node scripts/third-party-licenses.mjs && tsc -p tsconfig.json && vite build",
+    "preview": "vite preview --port 4316 --strictPort",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "typecheck": "tsc -p tsconfig.json",
+    "serve:dist": "node scripts/serve-static.mjs --dir dist --port 4316 --base /",
+    "e2e:install": "playwright install chromium",
+    "verify": "npm run typecheck && npm test && npm run build && npm run e2e"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.1"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}
